@@ -1,0 +1,21 @@
+Detecting features
+rm -f *.o *.lo *.slo *.obj *.a *.la conftest_foofn.c conftest_sys_file_h.c conftest_sys_mman_h.c conftest_sys_mutex_h.c conftest_sys_shm_h.c *.loT conftest_foofn conftest_sys_file_h conftest_sys_mman_h conftest_sys_mutex_h conftest_sys_shm_h
+rm -rf .libs
+/home/chandy/project/psandbox/apache/apache2/build/libtool --silent --mode=compile gcc  -g -O2 -pthread      -DLINUX -D_REENTRANT -D_GNU_SOURCE     -I/home/chandy/project/psandbox/apache/apache2/include -I. -I/home/chandy/project/psandbox/apache/httpd-2.4.38/srclib/apr/include -I/home/chandy/project/psandbox/apache/httpd-2.4.38/srclib/apr-util/include  -prefer-non-pic -static -c conftest_sys_file_h.c && touch conftest_sys_file_h.lo
+rm -f *.o *.lo *.slo *.obj *.a *.la conftest_foofn.c conftest_sys_file_h.c conftest_sys_mman_h.c conftest_sys_mutex_h.c conftest_sys_shm_h.c *.loT conftest_foofn conftest_sys_file_h conftest_sys_mman_h conftest_sys_mutex_h conftest_sys_shm_h
+rm -rf .libs
+/home/chandy/project/psandbox/apache/apache2/build/libtool --silent --mode=compile gcc  -g -O2 -pthread      -DLINUX -D_REENTRANT -D_GNU_SOURCE     -I/home/chandy/project/psandbox/apache/apache2/include -I. -I/home/chandy/project/psandbox/apache/httpd-2.4.38/srclib/apr/include -I/home/chandy/project/psandbox/apache/httpd-2.4.38/srclib/apr-util/include  -prefer-non-pic -static -c conftest_sys_mman_h.c && touch conftest_sys_mman_h.lo
+rm -f *.o *.lo *.slo *.obj *.a *.la conftest_foofn.c conftest_sys_file_h.c conftest_sys_mman_h.c conftest_sys_mutex_h.c conftest_sys_shm_h.c *.loT conftest_foofn conftest_sys_file_h conftest_sys_mman_h conftest_sys_mutex_h conftest_sys_shm_h
+rm -rf .libs
+/home/chandy/project/psandbox/apache/apache2/build/libtool --silent --mode=compile gcc  -g -O2 -pthread      -DLINUX -D_REENTRANT -D_GNU_SOURCE     -I/home/chandy/project/psandbox/apache/apache2/include -I. -I/home/chandy/project/psandbox/apache/httpd-2.4.38/srclib/apr/include -I/home/chandy/project/psandbox/apache/httpd-2.4.38/srclib/apr-util/include  -prefer-non-pic -static -c conftest_sys_mutex_h.c && touch conftest_sys_mutex_h.lo
+conftest_sys_mutex_h.c:1:10: fatal error: sys/mutex.h: No such file or directory
+ #include <sys/mutex.h>
+          ^~~~~~~~~~~~~
+compilation terminated.
+make: *** [/home/chandy/project/psandbox/apache/apache2/build/rules.mk:206: conftest_sys_mutex_h.lo] Error 1
+rm -f *.o *.lo *.slo *.obj *.a *.la conftest_foofn.c conftest_sys_file_h.c conftest_sys_mman_h.c conftest_sys_mutex_h.c conftest_sys_shm_h.c *.loT conftest_foofn conftest_sys_file_h conftest_sys_mman_h conftest_sys_mutex_h conftest_sys_shm_h
+rm -rf .libs
+/home/chandy/project/psandbox/apache/apache2/build/libtool --silent --mode=compile gcc  -g -O2 -pthread      -DLINUX -D_REENTRANT -D_GNU_SOURCE     -I/home/chandy/project/psandbox/apache/apache2/include -I. -I/home/chandy/project/psandbox/apache/httpd-2.4.38/srclib/apr/include -I/home/chandy/project/psandbox/apache/httpd-2.4.38/srclib/apr-util/include  -prefer-non-pic -static -c conftest_sys_shm_h.c && touch conftest_sys_shm_h.lo
+rm -f *.o *.lo *.slo *.obj *.a *.la conftest_foofn.c conftest_sys_file_h.c conftest_sys_mman_h.c conftest_sys_mutex_h.c conftest_sys_shm_h.c *.loT conftest_foofn conftest_sys_file_h conftest_sys_mman_h conftest_sys_mutex_h conftest_sys_shm_h
+rm -rf .libs
+rm -f .deps Makefile 
