@@ -36,6 +36,8 @@
 #include "fcgid_protocol.h"
 #include "fcgid_proc.h"
 
+#include "psandbox.h"
+
 static APR_OPTIONAL_FN_TYPE(ap_cgi_build_command) * cgi_build_command;
 static ap_filter_rec_t *fcgid_filter_handle;
 static int g_php_fix_pathinfo_enable = 0;
@@ -211,6 +213,8 @@ static int fcgid_handler(request_rec * r)
 
     wrapper_conf = get_wrapper_info(r->filename, r);
 
+
+
     /* Check for existence of requested file, unless we use a virtual wrapper. */
     if (wrapper_conf == NULL || !wrapper_conf->virtual) {
         if (r->finfo.filetype == 0)
@@ -288,6 +292,7 @@ static int fcgid_handler(request_rec * r)
                                 r->connection);
 
     http_retcode = bridge_request(r, FCGI_RESPONDER, wrapper_conf);
+
     return (http_retcode == HTTP_OK ? OK : http_retcode);
 }
 
