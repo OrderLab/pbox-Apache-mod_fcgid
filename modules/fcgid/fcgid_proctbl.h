@@ -23,6 +23,8 @@
 #include "fcgid_global.h"
 #include "fcgid_conf.h"
 
+#include "psandbox.h"
+
 /* Increase it if necessary */
 #define FCGID_MAX_APPLICATION (1024)
 
@@ -96,6 +98,8 @@ void proctable_pm_lock(server_rec *s);
 void proctable_pm_unlock(server_rec *s);
 void proctable_lock(request_rec *r);
 void proctable_unlock(request_rec *r);
+
+void proctable_update_psandbox(enum enum_event_type t);
 
 /* Just for debug */
 void proctable_print_debug_info(server_rec * main_server);

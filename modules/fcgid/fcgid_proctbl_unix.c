@@ -304,6 +304,11 @@ void proctable_pm_unlock(server_rec *s)
     }
 }
 
+void proctable_update_psandbox(enum enum_event_type t)
+{
+    update_psandbox((size_t)g_sharelock, t);
+}
+
 void proctable_print_debug_info(server_rec * main_server)
 {
     int freecount = 0;
