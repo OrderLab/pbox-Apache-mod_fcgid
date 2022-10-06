@@ -6,3 +6,5 @@
 *.la
 *.slo
 *.so
+config.apxs.log
+Makefile
