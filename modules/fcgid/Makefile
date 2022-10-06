@@ -7,17 +7,17 @@
 # top_builddir and top_srcdir are misnomers, because build/*.mk
 # scripts expect it them be the parent of the build directory,
 # and fail to trust the installbuilddir.
-exp_installbuilddir=/home/chandy/project/psandbox/apache/apache2/build
-top_srcdir=/home/chandy/project/psandbox/apache/apache2
-top_builddir=/home/chandy/project/psandbox/apache/apache2
+exp_installbuilddir=/home/yigonghu/research/perfIsolation/software/httpd/2.4.38/../dist/build
+top_srcdir=/home/yigonghu/research/perfIsolation/software/httpd/2.4.38/../dist
+top_builddir=/home/yigonghu/research/perfIsolation/software/httpd/2.4.38/../dist
 
-fcgid_builddir=/home/chandy/project/psandbox/apache/mod_fcgid-2.3.9
-fcgid_srcdir=/home/chandy/project/psandbox/apache/mod_fcgid-2.3.9
-builddir=/home/chandy/project/psandbox/apache/mod_fcgid-2.3.9/modules/fcgid
-srcdir=/home/chandy/project/psandbox/apache/mod_fcgid-2.3.9/modules/fcgid
+fcgid_builddir=/home/yigonghu/research/perfIsolation/software/httpd/perfIsolation-Apache-mod_fcgid
+fcgid_srcdir=/home/yigonghu/research/perfIsolation/software/httpd/perfIsolation-Apache-mod_fcgid
+builddir=/home/yigonghu/research/perfIsolation/software/httpd/perfIsolation-Apache-mod_fcgid/modules/fcgid
+srcdir=/home/yigonghu/research/perfIsolation/software/httpd/perfIsolation-Apache-mod_fcgid/modules/fcgid
 
 CLEAN_TARGETS = *.loT
-include /home/chandy/project/psandbox/apache/apache2/build/special.mk
+include /home/yigonghu/research/perfIsolation/software/httpd/2.4.38/../dist/build/special.mk
 
 all: local-shared-build all-recursive
 

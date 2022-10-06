@@ -7,14 +7,14 @@
 # top_builddir and top_srcdir are misnomers, because build/*.mk scripts
 # expect each of them to be the parent of the build directory, and fail
 # to trust the installbuilddir.
-exp_installbuilddir=/home/chandy/project/psandbox/apache/apache2/build
-top_srcdir=/home/chandy/project/psandbox/apache/apache2
-top_builddir=/home/chandy/project/psandbox/apache/apache2
+exp_installbuilddir=/home/yigonghu/research/perfIsolation/software/httpd/2.4.38/../dist/build
+top_srcdir=/home/yigonghu/research/perfIsolation/software/httpd/2.4.38/../dist
+top_builddir=/home/yigonghu/research/perfIsolation/software/httpd/2.4.38/../dist
 
-fcgid_builddir=/home/chandy/project/psandbox/apache/mod_fcgid-2.3.9
-fcgid_srcdir=/home/chandy/project/psandbox/apache/mod_fcgid-2.3.9
-builddir=/home/chandy/project/psandbox/apache/mod_fcgid-2.3.9
-srcdir=/home/chandy/project/psandbox/apache/mod_fcgid-2.3.9
+fcgid_builddir=/home/yigonghu/research/perfIsolation/software/httpd/perfIsolation-Apache-mod_fcgid
+fcgid_srcdir=/home/yigonghu/research/perfIsolation/software/httpd/perfIsolation-Apache-mod_fcgid
+builddir=/home/yigonghu/research/perfIsolation/software/httpd/perfIsolation-Apache-mod_fcgid
+srcdir=/home/yigonghu/research/perfIsolation/software/httpd/perfIsolation-Apache-mod_fcgid
 awk=gawk
 
 SUBDIRS = modules/fcgid
@@ -26,7 +26,7 @@ INSTALL_TARGETS = install-conf install-manual
 DISTCLEAN_TARGETS  = config.apxs.log modules/fcgid/fcgid_config.h
 EXTRACLEAN_TARGETS = 
 
-include /home/chandy/project/psandbox/apache/apache2/build/rules.mk
+include /home/yigonghu/research/perfIsolation/software/httpd/2.4.38/../dist/build/rules.mk
 
 x-local-distclean:
 	rm -rf docs/manual/build docs/manual/style
@@ -35,7 +35,7 @@ x-local-distclean:
 rel_libexecdir=modules
 rel_sysconfdir=conf
 rel_logfiledir=logs
-httpd_conffile=/home/chandy/project/psandbox/apache/apache2/conf/httpd.conf
+httpd_conffile=/home/yigonghu/research/perfIsolation/software/httpd/2.4.38/../dist/conf/httpd.conf
 httpd_origconffile=$(exp_sysconfdir)/original/$(progname).conf
 
 install-conf:
