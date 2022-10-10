@@ -22,9 +22,9 @@
 #include "apr_thread_proc.h"
 #include "fcgid_global.h"
 #include "fcgid_conf.h"
-
+#ifdef HAVE_PSANDBOX
 #include "psandbox.h"
-
+#endif
 /* Increase it if necessary */
 #define FCGID_MAX_APPLICATION (1024)
 
@@ -98,9 +98,9 @@ void proctable_pm_lock(server_rec *s);
 void proctable_pm_unlock(server_rec *s);
 void proctable_lock(request_rec *r);
 void proctable_unlock(request_rec *r);
-
+#ifdef HAVE_PSANDBOX
 void proctable_update_psandbox(enum enum_event_type t);
-
+#endif
 /* Just for debug */
 void proctable_print_debug_info(server_rec * main_server);
 

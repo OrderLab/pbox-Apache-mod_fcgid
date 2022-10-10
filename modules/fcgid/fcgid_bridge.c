@@ -30,9 +30,9 @@
 #include "fcgid_spawn_ctl.h"
 #include "fcgid_protocol.h"
 #include "fcgid_bucket.h"
-
+#ifdef HAVE_PSANDBOX
 #include "psandbox.h"
-
+#endif
 #define FCGID_APPLY_TRY_COUNT 2
 #define FCGID_REQUEST_COUNT 32
 #define FCGID_BRIGADE_CLEAN_STEP 32
@@ -433,9 +433,9 @@ handle_request(request_rec * r, int role, fcgid_cmd_conf *cmd_conf,
     apr_pool_cleanup_register(r->pool, bucket_ctx,
                               bucket_ctx_cleanup, apr_pool_cleanup_null);
     procmgr_init_spawn_cmd(&fcgi_request, r, cmd_conf);
-    
+    #ifdef HAVE_PSANDBOX
     proctable_update_psandbox(PREPARE);
-
+    #endif
     /* Try to get a connected ipc handle */
     for (i = 0; i < FCGID_REQUEST_COUNT; i++) {
         /* Apply a free process slot, send a spawn request if I can't get one */
@@ -478,9 +478,9 @@ handle_request(request_rec * r, int role, fcgid_cmd_conf *cmd_conf,
                 break;
         }
     }
-
+#ifdef HAVE_PSANDBOX
     proctable_update_psandbox(ENTER);
-
+#endif
     /* Now I get a connected ipc handle */
     if (!bucket_ctx->procnode) {
         ap_log_rerror(APLOG_MARK, APLOG_WARNING, 0, r,
